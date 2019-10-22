@@ -106,8 +106,8 @@ class MusicLibraryController
       index = 1
       sorted_songs = searched_genre.songs.sort_by { |song| song.name }
       sorted_songs.map do |song|
-        puts "#{index}. #{song.artist.name} - #{song.name}"
         index += 1
+        puts "#{index}. #{song.artist.name} - #{song.name}"
       end
     end
   end
