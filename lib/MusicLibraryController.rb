@@ -53,7 +53,7 @@ class MusicLibraryController
   end
   
   def list_songs
-    index = 1
+    index = 0
     sorted_songs.map do |song|
       index += 1
       puts "#{index}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
@@ -61,7 +61,7 @@ class MusicLibraryController
   end
   
   def list_artists
-    index = 1
+    index = 0
     sorted_artists.map do |artist|
       index += 1
       puts "#{index}. #{artist.name}"
@@ -69,7 +69,7 @@ class MusicLibraryController
   end
   
   def list_genres
-    index = 1
+    index = 0
     sorted_genres.map do |genre|
       index += 1
       puts "#{index}. #{genre.name}"
@@ -81,7 +81,7 @@ class MusicLibraryController
     input = gets.chomp
     searched_artist = Artist.all.find { |artist| artist.name == input.to_s }
     if searched_artist
-      index = 1
+      index = 0
       sorted_songs = searched_artist.songs.sort_by { |song| song.name }
       sorted_songs.map do |song|
         index += 1
@@ -95,7 +95,7 @@ class MusicLibraryController
     input = gets.chomp
     searched_genre = Genre.all.find { |genre| genre.name == input.to_s }
     if searched_genre
-      index = 1
+      index = 0
       sorted_songs = searched_genre.songs.sort_by { |song| song.name }
       sorted_songs.map do |song|
         index += 1
