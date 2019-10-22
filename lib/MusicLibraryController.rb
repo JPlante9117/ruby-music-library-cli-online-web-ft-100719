@@ -54,33 +54,25 @@ class MusicLibraryController
   
   def list_songs
     index = 1
-    
     sorted_songs.map do |song|
-      
       index += 1
       puts "#{index}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
-      
     end
   end
   
   def list_artists
     index = 1
-    
     sorted_artists.map do |artist|
-      
       index += 1
       puts "#{index}. #{artist.name}"
-      
     end
   end
   
   def list_genres
     index = 1
     sorted_genres.map do |genre|
-      
       index += 1
       puts "#{index}. #{genre.name}"
-      
     end
   end
   
